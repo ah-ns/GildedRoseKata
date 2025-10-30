@@ -23,6 +23,9 @@ class Shop {
           if (item.quality < 50 && item.sellIn <= 10) item.quality++;
           if (item.quality < 50 && item.sellIn <= 5) item.quality++;
         }
+      } else if (item.name.split(" ")[0] == "Conjured") {
+        if (item.quality > 0) item.quality -= 2;
+        if (item.quality > 0 && item.sellIn < 0) item.quality -= 2;
       } else if (item.name != "Sulfuras, Hand of Ragnaros") {
         if (item.quality > 0) item.quality--;
         if (item.quality > 0 && item.sellIn < 0) item.quality--;
